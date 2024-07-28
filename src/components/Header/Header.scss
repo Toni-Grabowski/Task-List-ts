@@ -1,0 +1,18 @@
+.header {
+    display: flex;
+    margin-inline: 100px;
+    padding: 20px;
+  
+}
+.header__list {
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none; /* Убираем маркеры у списка */
+    width: 100%;
+}
+.task, .profile {
+    font-size: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 600;
+    cursor: pointer;
+}

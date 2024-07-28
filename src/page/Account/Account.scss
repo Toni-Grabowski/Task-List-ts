@@ -1,0 +1,37 @@
+.border__user{
+    margin-inline: 200px;
+    margin-top: 100px;
+}
+
+.avatar {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    object-fit: cover; /* Позволяет сохранить правильные пропорции изображения */
+    image-rendering: -webkit-optimize-contrast; /* Оптимизация отображения изображения для улучшения качества */
+    image-rendering: crisp-edges; /* Альтернативный вариант для улучшения качества */
+}
+
+.info{
+    display: flex;
+    font-size: 30px;
+    margin-bottom: -20px;
+    margin-left: 90px;
+    .name{
+        margin-right: 7px;
+    }
+}
+
+.email{
+    margin-left: 50px;
+    font-size: 23px; 
+}
+
+.exit{
+    width: 200px;
+    height: 40px;
+    border-radius: 20px;
+    border: 1px solid #000000;
+    margin-left: 50px;
+    cursor: pointer;
+}
