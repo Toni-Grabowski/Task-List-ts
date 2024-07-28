@@ -7,7 +7,8 @@ const Register = () => {
         name:'',
         lastName:'',
         email: '',
-        password:''
+        password:'',
+        task: [],
     })
 
     useEffect(() => {
