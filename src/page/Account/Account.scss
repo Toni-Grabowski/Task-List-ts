@@ -7,10 +7,9 @@
     width: 300px;
     height: 300px;
     border-radius: 50%;
-    object-fit: cover; /* Позволяет сохранить правильные пропорции изображения */
-    image-rendering: -webkit-optimize-contrast; /* Оптимизация отображения изображения для улучшения качества */
-    image-rendering: crisp-edges; /* Альтернативный вариант для улучшения качества */
+    object-fit: cover;
 }
+
 
 .info{
     display: flex;

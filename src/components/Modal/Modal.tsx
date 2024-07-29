@@ -8,19 +8,24 @@ interface ModalProps {
 }
 
 interface InputModal {
+  id: number;
   heading: string;
   text: string;
 }
 
 const Modal: FC<ModalProps> = ({ modalFlag, setModalFlag, addTask}) => {
+  let currentId = 1
   const [inputModal, setInputModal] = useState<InputModal>({
+    id: 0,
     heading: '',
     text: '',
   });
 
+
+
   const inputModalValue = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
-    setInputModal({ ...inputModal, [name]: value });
+    setInputModal({ ...inputModal, [name]: value});
   };
 
   const createTask = async () => {
@@ -28,8 +33,9 @@ const Modal: FC<ModalProps> = ({ modalFlag, setModalFlag, addTask}) => {
     
     let response = await fetch(`https://66a559915dc27a3c190b4d0f.mockapi.io/user/${lokal}`)
     let data =  await response.json()
-
-    let result = [...data.task, inputModal] 
+    const newId = data.task.length > 0 ? Math.max(...data.task.map(task => task.id)) + 1 : 1;
+    const newTask = { ...inputModal, id: newId };
+    let result = [...data.task, newTask];
 
   await fetch(`https://66a559915dc27a3c190b4d0f.mockapi.io/user/${lokal}`, {
     method: 'PUT',
@@ -37,10 +43,10 @@ const Modal: FC<ModalProps> = ({ modalFlag, setModalFlag, addTask}) => {
       'Accept': 'application/json',
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify({...data, task: result })
+    body: JSON.stringify({...data, id: newTask, task: result })
   })
 
-  addTask(inputModal);
+  addTask(newTask);
   setModalFlag(false);
   };
 

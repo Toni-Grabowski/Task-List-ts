@@ -70,6 +70,9 @@ const Home = () => {
                 <div key={index}>
                   <p>{item.heading}</p>
                   <p>{item.text}</p>
+
+                  <button>Удалить</button>
+                  <button>Редактировать</button>
                 </div>
                 
               ))
