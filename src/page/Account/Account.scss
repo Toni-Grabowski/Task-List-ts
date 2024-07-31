@@ -1,3 +1,7 @@
+.main__account{
+    display: flex;
+}
+
 .border__user{
     margin-inline: 200px;
     margin-top: 100px;
@@ -26,11 +30,35 @@
     font-size: 23px; 
 }
 
-.exit{
+.exit {
     width: 200px;
-    height: 40px;
-    border-radius: 20px;
-    border: 1px solid #000000;
+    background-color: #dc3545; 
+    color: white; 
+    border: none;    
+    padding: 10px 20px; 
+    font-size: 16px; 
+    border-radius: 5px;  
+    cursor: pointer;  
+    transition: background-color 0.3s; 
+    margin: 10px 0; 
     margin-left: 50px;
-    cursor: pointer;
+    
+  }
+  
+  .exit:hover {
+    background-color: #c82333; 
+  }
+  
+  .exit:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.5); 
+  }
+.statistics{
+    margin-top: 140px;
+    background-color: rgb(231, 231, 231);
+    width: 1000px;
+    margin-left: -50px;
+    border-radius: 20px;
+    padding: 50px 10px 50px 30px;
+    font-size: 30px;
 }

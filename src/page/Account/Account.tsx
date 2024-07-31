@@ -28,7 +28,6 @@ const Account = () => {
         })
         .then((data) => {
             setUser(data)
-            console.log(data)
         })
     }
 
@@ -39,24 +38,28 @@ const Account = () => {
     }
 
   return (
-    <div>
+    <div >
         <Header/>
-         {user ? 
-         <div className='border__user'>
-            <img className='avatar' src={user.avatar} alt={user.name} />
-            <div className='info'>
-                <p className='name'>{user.name}</p> 
-                <p className='lastName'>{user.lastName}</p>        
+        <div className='main__account'>
+
+        
+            {user ? 
+            <div className='border__user'>
+                <img className='avatar' src={user.avatar} alt={user.name} />
+                <div className='info'>
+                    <p className='name'>{user.name}</p> 
+                    <p className='lastName'>{user.lastName}</p>        
+                </div>
+                <p className='email'>{user.email}</p>
+                <button className='exit' onClick={exit}>Выход</button>
             </div>
+            : <p>Loading...</p>
+            }
 
-            <p className='email'>{user.email}</p>
-         
-
-            <button className='exit' onClick={exit}>Выход</button>
-         </div>
-         : <p>Loading...</p>
-         }
-
+            <div className='statistics'>
+                User statistics
+            </div>
+        </div>
     </div>
   )
 }
